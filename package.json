@@ -1,7 +1,7 @@
 {
   "name": "portfolio-site",
   "version": "1.0.0",
-  "main": "api/server.js",
+  "main": "js/server.js",
   "scripts": {
     "start": "node api/server.js"
   },
