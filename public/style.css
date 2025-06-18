@@ -389,7 +389,11 @@ padding: 0 4px 0 4px;
     -webkit-backdrop-filter: blur( 8px );
         }
    
-
+@media (max-width:660px) {
+    .skills-section{
+        flex-direction: column;
+    }
+}
   @media (max-width:975px){
     .home{
         padding: 0px 20px 0 20px;
@@ -464,7 +468,7 @@ padding: 0 4px 0 4px;
     margin-top: 80px;
    }
  .skills-section{
-    flex-direction: column;
+  
     gap: 40px;
     align-items: center;
  }
