@@ -54,7 +54,9 @@
       <img src="../assets/myimage.jpg" alt="">
     </div>
     <div class="summary">
-      <h1 class="name">👉 Harsh Davra 👈</h1>
+      <h1 class="name">👉 <span class="typing"></span> 👈</h1>
+
+      
       <h2 class="field">--- Web Developer ---</h2>
       <p class="detail">"I'm Harsh Davra, a back-end developer skilled in building efficient
         and scalable web applications, with expertise in database operations."</p>
@@ -494,6 +496,49 @@
   document.body.removeChild(link);
 }
 
+const element = document.querySelector(".typing");
+const text = "Harsh Davra";
+let index = 0;
+let isDeleting = false;
+let lastTime = 0;
+let delay = 100; // Milliseconds between characters
+let pauseTime = 0;
+
+function animateTyping(timestamp) {
+  if (!lastTime) lastTime = timestamp;
+
+  const elapsed = timestamp - lastTime;
+
+  if (pauseTime > 0) {
+    pauseTime -= elapsed;
+    lastTime = timestamp;
+    requestAnimationFrame(animateTyping);
+    return;
+  }
+
+  if (elapsed >= delay) {
+    if (!isDeleting) {
+      element.textContent = text.substring(0, index + 1);
+      index++;
+      if (index === text.length) {
+        isDeleting = true;
+        pauseTime = 2000; // Pause after typing
+      }
+    } else {
+      element.textContent = text.substring(0, index - 1);
+      index--;
+      if (index === 0) {
+        isDeleting = false;
+        pauseTime = 1000; // Pause after deleting
+      }
+    }
+    lastTime = timestamp;
+  }
+
+  requestAnimationFrame(animateTyping);
+}
+
+requestAnimationFrame(animateTyping);
   </script>
 
 </body>
