@@ -293,6 +293,9 @@ body{
 .skills-section .col-6{
     gap: 10px;
 }
+#ott,#trip,#weather{
+    cursor: pointer;
+}
 .about-category .sub-skills{
     width: 350px;
 }
