@@ -153,9 +153,27 @@ body{
 
 .myimage img, .about-img img {
     height: auto;
-    width: 100%;       /* Image fills parent width */     /* Maintain aspect ratio */
-    object-fit: cover; /* Crop image nicely */
+    width: 100%;       
+    object-fit: cover; 
    
+}
+.project-section{
+    margin-top: 100px;
+}
+.project-img{
+    position: relative;
+    border:3px solid rgba(227, 226, 226, 0.868);
+    
+    overflow: hidden;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.project-img img{
+    height: 100%;
+    width: 100%;       
+    object-fit: cover; 
 }
 
 @keyframes border{
